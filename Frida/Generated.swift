@@ -3541,7 +3541,7 @@ public final class Script: @unchecked Sendable, CustomStringConvertible, Equatab
             let payload = payloadAny as? [Any],
             payload.count >= 3,
             let kind = payload[0] as? String,
-            kind == "frida:rpc",
+            kind == "meshlink:rpc",
             let requestId = payload[1] as? Int,
             let status = payload[2] as? String
         else {
@@ -3603,7 +3603,7 @@ public final class Script: @unchecked Sendable, CustomStringConvertible, Equatab
                 self.requestId &+= 1
 
                 let message: [Any] = [
-                    "frida:rpc",
+                    "meshlink:rpc",
                     id,
                     "call",
                     functionName,
